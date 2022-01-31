@@ -1,0 +1,20 @@
+<div class="card">
+  <img 
+  class="card-img-top" 
+  src="/assets/MovieApp.png" alt="image">
+	<div class="card-body">
+		<h5 class="card-title">
+      {{ title.titleName  | ellipsify: 25 }}
+			<span class="badge badge-primary">{{ title.titleNameSortable | uppercase }}</span>
+    </h5>
+		<p class="card-text">
+      {{ title.titleName  }} is a movie that was released in {{  title.releaseYear }}
+    </p>
+		<a 
+      routerLink="/movie-detail" 
+      [queryParams]="{ movieId: title.titleId }" 
+      class="btn btn-primary">
+			Learn More
+		</a>
+	</div>
+</div>

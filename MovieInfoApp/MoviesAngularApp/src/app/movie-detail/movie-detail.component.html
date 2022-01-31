@@ -1,0 +1,41 @@
+<div 
+  class="container"
+  *ngIf="movieDetail$ | async as movie">
+
+  <button class="btn btn-primary" routerLink="/">Go Back</button>
+
+  <h1 class="my-4">{{ movie.TitleName }}
+
+      <span class="badge badge-primary">
+        {{ movie.TitleName }}
+      </span>
+
+  </h1>
+
+  <div class="row">
+
+    <div class="col-md-8">
+        <img 
+        class="img-fluid" 
+        src="/assets/MovieApp.png" alt="image">
+    </div>
+
+    <div class="col-md-4">
+      <span 
+        class="badge badge-success"
+        *ngFor="let genre of movie.Genre | splitString : ', '">
+        {{ genre }}
+      </span>
+
+      <h3 class="my-3">StoryLine</h3>
+      <p>{{ movie.StoryLine }}</p>
+
+      <h3 class="my-3">Awards</h3>
+      <p>{{ movie.Awards }}</p>
+
+      <h3 class="my-3">Participants</h3>
+      <p>{{ movie.Participants }}</p>
+    </div>
+
+  </div>
+</div>

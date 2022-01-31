@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="form-group">
+      <label for="query">Search for a Movie</label>
+      <input 
+      id="query" 
+      type="text" 
+      class="form-control" 
+      [(ngModel)]="query"
+      (keyup.enter)="getSearchResults()">
+  </div>
+  <button type="button" (click)="getSearchResults()" class="form-control btn btn-primary">Search</button>
+  <hr>
+    <!-- 
+    <table class="table table-striped">
+      <thead>
+        <th>titleId</th>
+        <th>titleName</th>
+        <th>titleNameSortable</th>
+        <th>releaseYear</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of titles$|async">
+          <td>{{item.titleId}}</td>
+          <td>{{item.titleName}}</td>
+          <td>{{item.titleNameSortable}}</td>
+          <td>{{item.releaseYear}}</td>
+        </tr>
+      </tbody>
+    </table> -->
+
+    <div class="row">
+      <app-movie-card 
+        *ngFor="let title of titles$ | async"
+        [title]="title"
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+      </app-movie-card>
+    </div>
+  </div>
+  
