@@ -13,16 +13,6 @@
   }
 }
 
-.similar-poster {
-  width: 500px;
-  height: 300px;
-  object-fit: cover;
-}
-
-.card-img-overlay {
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 30%);
-}
-
 .card-title {
   color: #fff;
 }
